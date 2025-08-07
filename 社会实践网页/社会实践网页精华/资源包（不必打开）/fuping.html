@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>阜平红色金融 - 革命历史中的金融探索</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#c0392b',
+                        secondary: '#3498db',
+                        neutral: '#f8f9fa',
+                        dark: '#2c3e50',
+                        light: '#ecf0f1'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                        serif: ['Merriweather', 'Georgia', 'serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+                    .content-auto {
+                        content-visibility: auto;
+                    }
+                    .text-shadow {
+                        text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+                    }
+                    .card-hover {
+                        transition: all 0.3s ease;
+                    }
+                    .card-hover:hover {
+                        transform: translateY(-5px);
+                        box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+                    }
+                    .gradient-overlay {
+                        background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.7) 100%);
+                    }
+                    .timeline-item {
+                        position: relative;
+                        padding-left: 2rem;
+                        margin-bottom: 2rem;
+                    }
+                    .timeline-item::before {
+                        content: '';
+                        position: absolute;
+                        left: 0;
+                        top: 0.5rem;
+                        width: 1rem;
+                        height: 1rem;
+                        border-radius: 50%;
+                        background-color: #c0392b;
+                    }
+                    .timeline-item::after {
+                        content: '';
+                        position: absolute;
+                        left: 0.45rem;
+                        top: 1.75rem;
+                        width: 0.1rem;
+                        height: calc(100% - 1.75rem);
+                        background-color: #c0392b;
+                    }
+                    .timeline-item:last-child::after {
+                        display: none;
+                    }
+                }
+            </style>
+</head>
+
+<body class="bg-light text-dark font-sans">
+    <!-- 导航栏 -->
+    <nav class="fixed w-full bg-white/90 backdrop-blur-md shadow-md z-50 transition-all duration-300" id="main-nav">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <a href="#" class="flex items-center space-x-2">
+                <i class="fa fa-university text-primary text-2xl"></i>
+                <span class="text-xl font-bold text-dark">阜平红色金融</span>
+            </a>
+            <div class="hidden md:flex space-x-8">
+                <a href="#home" class="text-dark hover:text-primary transition-colors">首页</a>
+                <a href="#history" class="text-dark hover:text-primary transition-colors">历史背景</a>
+                <a href="#institutions" class="text-dark hover:text-primary transition-colors">金融机构</a>
+                <a href="#figures" class="text-dark hover:text-primary transition-colors">历史人物</a>
+                <a href="#legacy" class="text-dark hover:text-primary transition-colors">传承与影响</a>
+            </div>
+            <button class="md:hidden text-dark focus:outline-none" id="menu-toggle">
+                <i class="fa fa-bars text-xl"></i>
+            </button>
+        </div>
+        <!-- 移动端菜单 -->
+        <div class="md:hidden hidden bg-white shadow-lg absolute w-full" id="mobile-menu">
+            <div class="container mx-auto px-4 py-3 flex flex-col space-y-4">
+                <a href="#home" class="text-dark hover:text-primary transition-colors py-2">首页</a>
+                <a href="#history" class="text-dark hover:text-primary transition-colors py-2">历史背景</a>
+                <a href="#institutions" class="text-dark hover:text-primary transition-colors py-2">金融机构</a>
+                <a href="#figures" class="text-dark hover:text-primary transition-colors py-2">历史人物</a>
+                <a href="#legacy" class="text-dark hover:text-primary transition-colors py-2">传承与影响</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 英雄区域 -->
+    <header id="home" class="relative h-screen flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <img src="https://picsum.photos/id/1015/1920/1080" alt="阜平革命老区风景" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-dark/50"></div>
+        </div>
+        <div class="container mx-auto px-4 z-10 text-center">
+            <h1 class="text-[clamp(2.5rem,6vw,4.5rem)] font-bold text-white text-shadow mb-6">
+                阜平红色金融
+            </h1>
+            <p class="text-[clamp(1rem,3vw,1.5rem)] text-white/90 max-w-3xl mx-auto mb-10">
+                革命历史中的金融探索，新中国金融事业的重要基石
+            </p>
+            <a href="#history"
+                class="inline-block bg-primary hover:bg-primary/90 text-white font-bold py-3 px-8 rounded-full transition-all transform hover:scale-105 shadow-lg">
+                探索历史 <i class="fa fa-arrow-down ml-2"></i>
+            </a>
+        </div>
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <a href="#history" class="text-white/80 hover:text-white">
+                <i class="fa fa-chevron-down text-2xl"></i>
+            </a>
+        </div>
+    </header>
+
+    <!-- 历史背景 -->
+    <section id="history" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-[clamp(1.8rem,4vw,2.5rem)] font-bold text-dark mb-4">历史背景</h2>
+                <div class="w-20 h-1 bg-primary mx-auto"></div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="order-2 md:order-1">
+                    <h3 class="text-2xl font-bold text-dark mb-6">阜平革命老区的金融探索</h3>
+                    <p class="text-lg text-dark/80 mb-6 leading-relaxed">
+                        阜平县位于河北省西部，是著名的革命老区。在抗日战争和解放战争时期，阜平作为晋察冀边区的核心区域，为中国革命的胜利作出了重要贡献。
+                    </p>
+                    <p class="text-lg text-dark/80 mb-6 leading-relaxed">
+                        特殊的历史背景下，阜平成为红色金融的重要试验田。中国共产党在这里进行了一系列金融创新，为支持革命战争、发展根据地经济发挥了关键作用。
+                    </p>
+                    <p class="text-lg text-dark/80 mb-6 leading-relaxed">
+                        阜平红色金融的实践，不仅为革命胜利提供了物质保障，也为新中国金融体系的建立积累了宝贵经验。
+                    </p>
+                </div>
+                <div class="order-1 md:order-2">
+                    <div class="relative rounded-lg overflow-hidden shadow-xl">
+                        <img src="https://picsum.photos/id/1019/800/600" alt="阜平革命历史照片" class="w-full h-auto">
+                        <div class="absolute bottom-0 left-0 right-0 p-6 gradient-overlay">
+                            <p class="text-white font-medium">阜平革命老区的历史见证</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 时间线 -->
+            <div class="mt-20">
+                <h3 class="text-2xl font-bold text-dark mb-10 text-center">阜平红色金融大事记</h3>
+                <div class="max-w-3xl mx-auto">
+                    <div class="timeline-item">
+                        <h4 class="text-xl font-bold text-dark mb-2">1937年 - 晋察冀边区建立</h4>
+                        <p class="text-dark/80">抗日战争爆发后，中国共产党在阜平等地建立了晋察冀抗日根据地，为红色金融的发展奠定了基础。</p>
+                    </div>
+                    <div class="timeline-item">
+                        <h4 class="text-xl font-bold text-dark mb-2">1938年 - 晋察冀边区银行成立</h4>
+                        <p class="text-dark/80">边区政府在阜平成立了晋察冀边区银行，发行边币，统一货币市场，稳定金融秩序。</p>
+                    </div>
+                    <div class="timeline-item">
+                        <h4 class="text-xl font-bold text-dark mb-2">1941年 - 金融政策调整</h4>
+                        <p class="text-dark/80">面对日军经济封锁，边区政府实施了一系列金融改革，包括加强货币管理、开展储蓄业务等。</p>
+                    </div>
+                    <div class="timeline-item">
+                        <h4 class="text-xl font-bold text-dark mb-2">1948年 - 华北银行成立</h4>
+                        <p class="text-dark/80">晋察冀边区银行与冀南银行合并，成立华北银行，为中国人民银行的建立奠定了基础。</p>
+                    </div>
+                    <div class="timeline-item">
+                        <h4 class="text-xl font-bold text-dark mb-2">1949年至今 - 红色金融精神传承</h4>
+                        <p class="text-dark/80">阜平红色金融的历史经验被传承和发扬，成为中国金融事业发展的重要精神财富。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 金融机构 -->
+    <section id="institutions" class="py-20 bg-neutral">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-[clamp(1.8rem,4vw,2.5rem)] font-bold text-dark mb-4">红色金融机构</h2>
+                <div class="w-20 h-1 bg-primary mx-auto"></div>
+                <p class="text-dark/70 max-w-2xl mx-auto mt-4">阜平红色金融发展过程中，诞生了多个重要金融机构，它们为革命事业和根据地经济建设发挥了重要作用。</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- 晋察冀边区银行 -->
+                <div class="bg-white rounded-lg overflow-hidden shadow-lg card-hover">
+                    <div class="h-60 overflow-hidden">
+                        <img src="https://picsum.photos/id/1036/600/400" alt="晋察冀边区银行旧址"
+                            class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-dark mb-3">晋察冀边区银行</h3>
+                        <p class="text-dark/70 mb-4">成立于1938年，是晋察冀边区的核心金融机构，发行边币，支持抗战和根据地建设。</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm">1938年成立</span>
+                            <span class="px-3 py-1 bg-secondary/10 text-secondary rounded-full text-sm">货币发行</span>
+                        </div>
+                        <a href="#" class="text-primary font-medium hover:underline flex items-center">
+                            了解更多 <i class="fa fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 农村信用合作社 -->
+                <div class="bg-white rounded-lg overflow-hidden shadow-lg card-hover">
+                    <div class="h-60 overflow-hidden">
+                        <img src="https://picsum.photos/id/1048/600/400" alt="农村信用合作社"
+                            class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-dark mb-3">农村信用合作社</h3>
+                        <p class="text-dark/70 mb-4">为解决农民生产生活资金困难而设立，是中国早期农村金融的重要实践。</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm">1940年代</span>
+                            <span class="px-3 py-1 bg-secondary/10 text-secondary rounded-full text-sm">农村金融</span>
+                        </div>
+                        <a href="#" class="text-primary font-medium hover:underline flex items-center">
+                            了解更多 <i class="fa fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 华北银行 -->
+                <div class="bg-white rounded-lg overflow-hidden shadow-lg card-hover">
+                    <div class="h-60 overflow-hidden">
+                        <img src="https://picsum.photos/id/1059/600/400" alt="华北银行"
+                            class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-dark mb-3">华北银行</h3>
+                        <p class="text-dark/70 mb-4">由晋察冀边区银行和冀南银行合并而成，为新中国金融体系的建立奠定了基础。</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm">1948年成立</span>
+                            <span class="px-3 py-1 bg-secondary/10 text-secondary rounded-full text-sm">中央银行前身</span>
+                        </div>
+                        <a href="#" class="text-primary font-medium hover:underline flex items-center">
+                            了解更多 <i class="fa fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 历史人物 -->
+    <section id="figures" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-[clamp(1.8rem,4vw,2.5rem)] font-bold text-dark mb-4">红色金融人物</h2>
+                <div class="w-20 h-1 bg-primary mx-auto"></div>
+                <p class="text-dark/70 max-w-2xl mx-auto mt-4">在阜平红色金融发展历程中，涌现出许多杰出人物，他们为革命金融事业作出了重要贡献。</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- 关学文 -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden card-hover group">
+                    <div class="relative h-80 overflow-hidden">
+                        <img src="https://picsum.photos/id/1012/600/800" alt="关学文"
+                            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-dark/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
+                            <div class="p-6">
+                                <h4 class="text-xl font-bold text-white mb-2">关学文</h4>
+                                <p class="text-white/80">晋察冀边区银行首任行长</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h4 class="text-xl font-bold text-dark mb-2 group-hover:text-primary transition-colors">关学文</h4>
+                        <p class="text-dark/70">晋察冀边区银行首任行长，为边区金融建设和货币稳定作出了重要贡献。</p>
+                        <div class="mt-4 flex gap-3">
+                            <a href="#" class="text-dark/60 hover:text-primary transition-colors">
+                                <i class="fa fa-book"></i>
+                            </a>
+                            <a href="#" class="text-dark/60 hover:text-primary transition-colors">
+                                <i class="fa fa-search"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 何松亭 -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden card-hover group">
+                    <div class="relative h-80 overflow-hidden">
+                        <img src="https://picsum.photos/id/1027/600/800" alt="何松亭"
+                            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-dark/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
+                            <div class="p-6">
+                                <h4 class="text-xl font-bold text-white mb-2">何松亭</h4>
+                                <p class="text-white/80">晋察冀边区银行重要领导人</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h4 class="text-xl font-bold text-dark mb-2 group-hover:text-primary transition-colors">何松亭</h4>
+                        <p class="text-dark/70">晋察冀边区银行重要领导人，参与边区金融政策制定和实施。</p>
+                        <div class="mt-4 flex gap-3">
+                            <a href="#" class="text-dark/60 hover:text-primary transition-colors">
+                                <i class="fa fa-book"></i>
+                            </a>
+                            <a href="#" class="text-dark/60 hover:text-primary transition-colors">
+                                <i class="fa fa-search"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 南汉宸 -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden card-hover group">
+                    <div class="relative h-80 overflow-hidden">
+                        <img src="https://picsum.photos/id/1074/600/800" alt="南汉宸"
+                            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-dark/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
+                            <div class="p-6">
+                                <h4 class="text-xl font-bold text-white mb-2">南汉宸</h4>
+                                <p class="text-white/80">中国人民银行首任行长</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h4 class="text-xl font-bold text-dark mb-2 group-hover:text-primary transition-colors">南汉宸</h4>
+                        <p class="text-dark/70">中国人民银行首任行长，参与领导晋察冀边区金融工作，为新中国金融体系奠基。</p>
+                        <div class="mt-4 flex gap-3">
+                            <a href="#" class="text-dark/60 hover:text-primary transition-colors">
+                                <i class="fa fa-book"></i>
+                            </a>
+                            <a href="#" class="text-dark/60 hover:text-primary transition-colors">
+                                <i class="fa fa-search"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 传承与影响 -->
+    <section id="legacy" class="py-20 bg-neutral">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-[clamp(1.8rem,4vw,2.5rem)] font-bold text-dark mb-4">传承与影响</h2>
+                <div class="w-20 h-1 bg-primary mx-auto"></div>
+                <p class="text-dark/70 max-w-2xl mx-auto mt-4">阜平红色金融的历史经验和精神财富，至今仍在影响和推动着中国金融事业的发展。</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-12">
+                <div>
+                    <h3 class="text-2xl font-bold text-dark mb-6">红色金融精神的传承</h3>
+                    <p class="text-dark/80 mb-6 leading-relaxed">
+                        阜平红色金融所体现的独立自主、艰苦奋斗、服务人民的精神，成为中国金融文化的重要组成部分。这种精神在新时代被不断传承和弘扬，激励着一代又一代金融工作者。
+                    </p>
+                    <div class="mb-8">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mr-4">
+                                <i class="fa fa-shield text-primary text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-bold text-dark">服务实体经济</h4>
+                                <p class="text-dark/70">坚持金融服务实体经济的本质要求</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mr-4">
+                                <i class="fa fa-users text-primary text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-bold text-dark">以人民为中心</h4>
+                                <p class="text-dark/70">坚守金融服务人民的初心使命</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mr-4">
+                                <i class="fa fa-lightbulb-o text-primary text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-bold text-dark">勇于创新</h4>
+                                <p class="text-dark/70">传承红色金融创新精神，推动金融改革</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-2xl font-bold text-dark mb-6">对现代金融的启示</h3>
+                    <p class="text-dark/80 mb-6 leading-relaxed">
+                        阜平红色金融的实践为现代金融发展提供了宝贵经验，包括货币发行与管理、农村金融服务、金融支持实体经济等方面的成功做法，至今仍具有重要借鉴意义。
+                    </p>
+                    <div class="bg-white rounded-lg shadow-lg p-6 mb-6">
+                        <h4 class="text-xl font-bold text-dark mb-4 flex items-center">
+                            <i class="fa fa-university text-primary mr-3"></i> 农村金融发展
+                        </h4>
+                        <p class="text-dark/70">
+                            阜平早期农村信用合作社的实践，为当代中国农村金融体系建设提供了历史经验，推动了普惠金融的发展。
+                        </p>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-lg p-6 mb-6">
+                        <h4 class="text-xl font-bold text-dark mb-4 flex items-center">
+                            <i class="fa fa-line-chart text-primary mr-3"></i> 金融稳定政策
+                        </h4>
+                        <p class="text-dark/70">
+                            晋察冀边区银行在货币发行和管理方面的经验，对现代货币政策制定和金融稳定维护具有重要启示。
+                        </p>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-lg p-6">
+                        <h4 class="text-xl font-bold text-dark mb-4 flex items-center">
+                            <i class="fa fa-handshake-o text-primary mr-3"></i> 金融服务革命
+                        </h4>
+                        <p class="text-dark/70">
+                            红色金融服务革命战争和根据地建设的实践，体现了金融服务国家战略的重要作用。
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 红色金融纪念馆 -->
+            <div class="mt-20 bg-white rounded-xl shadow-xl overflow-hidden">
+                <div class="grid md:grid-cols-2">
+                    <div>
+                        <img src="https://picsum.photos/id/1068/800/600" alt="阜平红色金融纪念馆"
+                            class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-8 md:p-12 flex flex-col justify-center">
+                        <h3 class="text-2xl font-bold text-dark mb-4">阜平红色金融纪念馆</h3>
+                        <p class="text-dark/80 mb-6">
+                            阜平红色金融纪念馆是展示阜平红色金融历史的重要场所，馆内珍藏了大量珍贵的历史文物和资料，生动再现了当年阜平红色金融的发展历程。
+                        </p>
+                        <div class="grid grid-cols-2 gap-4 mb-6">
+                            <div class="flex items-center">
+                                <i class="fa fa-map-marker text-primary mr-3"></i>
+                                <span class="text-dark/80">河北省保定市阜平县</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fa fa-clock-o text-primary mr-3"></i>
+                                <span class="text-dark/80">周二至周日 9:00-17:00</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fa fa-ticket text-primary mr-3"></i>
+                                <span class="text-dark/80">免费开放</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fa fa-info-circle text-primary mr-3"></i>
+                                <span class="text-dark/80">预约参观</span>
+                            </div>
+                        </div>
+                        <a href="#"
+                            class="inline-block bg-primary hover:bg-primary/90 text-white font-bold py-3 px-8 rounded-full transition-all transform hover:scale-105 shadow-lg w-max">
+                            参观预约 <i class="fa fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 学习资源 -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-[clamp(1.8rem,4vw,2.5rem)] font-bold text-dark mb-4">学习资源</h2>
+                <div class="w-20 h-1 bg-primary mx-auto"></div>
+                <p class="text-dark/70 max-w-2xl mx-auto mt-4">探索更多关于阜平红色金融的历史资料和学习资源</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- 书籍 -->
+                <div class="bg-white rounded-lg shadow-lg p-6 card-hover">
+                    <div class="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-6">
+                        <i class="fa fa-book text-primary text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-dark mb-4">历史书籍</h3>
+                    <ul class="space-y-3 mb-6">
+                        <li class="flex items-start">
+                            <i class="fa fa-check-circle text-primary mt-1 mr-3"></i>
+                            <span class="text-dark/80">《晋察冀边区银行史》</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa fa-check-circle text-primary mt-1 mr-3"></i>
+                            <span class="text-dark/80">《阜平革命老区金融志》</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa fa-check-circle text-primary mt-1 mr-3"></i>
+                            <span class="text-dark/80">《中国红色金融史》</span>
+                        </li>
+                    </ul>
+                    <a href="#" class="text-primary font-medium hover:underline">
+                        查看更多书籍 <i class="fa fa-arrow-right ml-1"></i>
+                    </a>
+                </div>
+
+                <!-- 纪录片 -->
+                <div class="bg-white rounded-lg shadow-lg p-6 card-hover">
+                    <div class="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-6">
+                        <i class="fa fa-film text-primary text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-dark mb-4">纪录片</h3>
+                    <ul class="space-y-3 mb-6">
+                        <li class="flex items-start">
+                            <i class="fa fa-check-circle text-primary mt-1 mr-3"></i>
+                            <span class="text-dark/80">《红色金融之路》</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa fa-check-circle text-primary mt-1 mr-3"></i>
+                            <span class="text-dark/80">《晋察冀风云》</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa fa-check-circle text-primary mt-1 mr-3"></i>
+                            <span class="text-dark/80">《阜平记忆》</span>
+                        </li>
+                    </ul>
+                    <a href="#" class="text-primary font-medium hover:underline">
+                        观看纪录片 <i class="fa fa-arrow-right ml-1"></i>
+                    </a>
+                </div>
+
+                <!-- 线上资源 -->
+                <div class="bg-white rounded-lg shadow-lg p-6 card-hover">
+                    <div class="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-6">
+                        <i class="fa fa-globe text-primary text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-dark mb-4">线上资源</h3>
+                    <ul class="space-y-3 mb-6">
+                        <li class="flex items-start">
+                            <i class="fa fa-check-circle text-primary mt-1 mr-3"></i>
+                            <span class="text-dark/80">阜平红色金融数字博物馆</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa fa-check-circle text-primary mt-1 mr-3"></i>
+                            <span class="text-dark/80">红色金融研究中心</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa fa-check-circle text-primary mt-1 mr-3"></i>
+                            <span class="text-dark/80">晋察冀革命根据地纪念馆官网</span>
+                        </li>
+                    </ul>
+                    <a href="#" class="text-primary font-medium hover:underline">
+                        访问网站 <i class="fa fa-arrow-right ml-1"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="bg-dark text-white pt-16 pb-8">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8 mb-12">
+                <div>
+                    <h3 class="text-xl font-bold mb-6 flex items-center">
+                        <i class="fa fa-university text-primary mr-3"></i>
+                        阜平红色金融
+                    </h3>
+                    <p class="text-white/70 mb-6">
+                        探索阜平红色金融历史，传承红色金融精神，弘扬革命文化。
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#"
+                            class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-primary transition-colors">
+                            <i class="fa fa-weixin"></i>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-primary transition-colors">
+                            <i class="fa fa-weibo"></i>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-primary transition-colors">
+                            <i class="fa fa-youtube-play"></i>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold mb-6">快速链接</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#home" class="text-white/70 hover:text-primary transition-colors">首页</a></li>
+                        <li><a href="#history" class="text-white/70 hover:text-primary transition-colors">历史背景</a></li>
+                        <li><a href="#institutions" class="text-white/70 hover:text-primary transition-colors">金融机构</a>
+                        </li>
+                        <li><a href="#figures" class="text-white/70 hover:text-primary transition-colors">历史人物</a></li>
+                        <li><a href="#legacy" class="text-white/70 hover:text-primary transition-colors">传承与影响</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold mb-6">相关资源</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-white/70 hover:text-primary transition-colors">红色金融纪念馆</a></li>
+                        <li><a href="#" class="text-white/70 hover:text-primary transition-colors">历史研究</a></li>
+                        <li><a href="#" class="text-white/70 hover:text-primary transition-colors">学习资料</a></li>
+                        <li><a href="#" class="text-white/70 hover:text-primary transition-colors">参观预约</a></li>
+                        <li><a href="#" class="text-white/70 hover:text-primary transition-colors">联系我们</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold mb-6">联系我们</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <i class="fa fa-map-marker text-primary mt-1 mr-3"></i>
+                            <span class="text-white/70">河北省保定市阜平县</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa fa-phone text-primary mt-1 mr-3"></i>
+                            <span class="text-white/70">0312-12345678</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa fa-envelope text-primary mt-1 mr-3"></i>
+                            <span class="text-white/70">info@fupingfinance.com</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-white/10 pt-8 text-center text-white/50">
+                <p>&copy; 2023 阜平红色金融网 | 版权所有</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // 导航栏滚动效果
+        const nav = document.getElementById('main-nav');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                nav.classList.add('py-2', 'shadow-lg');
+                nav.classList.remove('py-3');
+            } else {
+                nav.classList.add('py-3');
+                nav.classList.remove('py-2', 'shadow-lg');
+            }
+        });
+
+        // 移动端菜单切换
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        menuToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // 平滑滚动
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    // 关闭移动端菜单（如果打开）
+                    mobileMenu.classList.add('hidden');
+
+                    // 滚动到目标位置
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // 图片懒加载
+        document.addEventListener("DOMContentLoaded", function () {
+            const lazyImages = [].slice.call(document.querySelectorAll("img"));
+
+            if ("IntersectionObserver" in window) {
+                let lazyImageObserver = new IntersectionObserver(function (entries, observer) {
+                    entries.forEach(function (entry) {
+                        if (entry.isIntersecting) {
+                            let lazyImage = entry.target;
+                            lazyImage.classList.add("fade-in");
+                            lazyImageObserver.unobserve(lazyImage);
+                        }
+                    });
+                });
+
+                lazyImages.forEach(function (lazyImage) {
+                    lazyImageObserver.observe(lazyImage);
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>
